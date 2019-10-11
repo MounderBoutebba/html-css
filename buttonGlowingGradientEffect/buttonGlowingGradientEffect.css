@@ -1,0 +1,55 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family:  sans-serif;
+    height: 100vh;
+    background: #212122;
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.btn{
+    border-radius: 80px;
+    padding: 50px 100px;
+    background: linear-gradient(90deg,#03a9f4, #f441a5,#ffeb3b,#03a9f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: 40px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 3px;
+    background-size: 400%;
+}
+.btn:hover{
+    animation: anime infinite 8s linear;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    left:-5px;
+    top : -5px;
+    right : -5px;
+    bottom : -5px;
+    border-radius: 60px;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s;
+    background: linear-gradient(90deg,#03a9f4, #f441a5,#ffeb3b,#03a9f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 400%;
+}
+.btn:hover::before{
+    filter: blur(20px);
+    opacity: 1;
+    animation: anime infinite 8s linear;
+}
+@keyframes anime{
+    0%{
+        background-position: 0;
+    }
+    
+    100%{
+        background-position: 400%;
+    }
+}
